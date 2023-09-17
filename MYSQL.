@@ -18,5 +18,10 @@ sudo mysql -u root -p
   mysql> CREATE DATABASE dbbaru;
   mysql> GRANT ALL PRIVILEGES ON dbbaru.* TO 'UntilTomorrow'@'%';
   mysql> FLUSH PRIVILEGES;
-  mysql> show databases;
-  mysql>   DROP DATABASE dbname;
+  mysql> SHOW DATABASES;
+  mysql> SHOW TABLES;
+  mysql> mysql -u username -p nama_database < direktori/import.sql
+  mysql> SHOW COLUMNS FROM nama_tabel;
+  mysql> DROP DATABASE nama_db;
+  mysql> DELETE FROM nama_tabel WHERE kondisi;
+  mysql> DROP TABLE nama_tabel;
