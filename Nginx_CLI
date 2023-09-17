@@ -1,0 +1,44 @@
+command nginx on ubuntu
+
+$ sudo apt install nginx
+$ sudo systemctl start nginx
+$ sudo systemctl enable nginx
+$ sudo systemctl status nginx
+
+#Wordpress on Nginx 
+--------
+$ sudo nano /etc/nginx/sites-available/wordpress
+    Ubah domain ke domainmu atau ip vps
+
+    server {
+        listen 80;
+        server_name your_domain.com www.your_domain.com;
+        root /var/www/html/wordpress;
+        index index.php index.html index.htm;
+        location / {
+            try_files $uri $uri/ /index.php?$args;
+        }
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        }
+        location = /favicon.ico {
+            log_not_found off;
+            access_log off;
+        }
+        location = /robots.txt {
+            log_not_found off;
+            access_log off;
+            allow all;
+        }
+        location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
+            expires max;
+            log_not_found off;
+        }
+    }
+
+$ sudo ln -s /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/
+$ sudo nginx -t
+$ sudo systemctl reload nginx 
+
+--------------------------------------
