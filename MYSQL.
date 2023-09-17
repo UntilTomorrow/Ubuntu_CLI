@@ -1,0 +1,18 @@
+Command Ubuntu Server. 
+
+$ sudo apt install mysql-server
+$ sudo systemctl status mysql
+$ sudo mysql_secure_installation
+$ sudo systemctl restart mysql
+
+#Setting Remote DB 
+nano /etc/mysql/mysql.conf.d/mysqld.cnf 
+-> Ganti bind-address = 127.0.0.1 menjadi bind-address = 0.0.0.0
+-> Simpan dan tutup file tersebut. Kemudian restart servis MySQL
+
+Create DB baru 
+sudo mysql -u root -p
+  mysql> CREATE USER 'UntilTomorrow'@'%' IDENTIFIED BY 'qwerty';
+  mysql> CREATE DATABASE dbbaru;
+  mysql> GRANT ALL PRIVILEGES ON dbbaru.* TO 'UntilTomorrow'@'%';
+  mysql> FLUSH PRIVILEGES;
