@@ -24,12 +24,14 @@ $ git init
 $ git remote -v
 $ git pull origin (namabranch)
 
-$ git checkout -b (branch)
+$ git checkout -b (branch)   --> membuat branch baru 
+$ git checkout (branch)     --> pindah branch 
+
 rebase 
 $ git pull --rebase origin(branch)
 
 $ touch file 
 $ git add .
-$ git commit-m "push puh"
+$ git commit -m "push puh"
 $ git push origin -u (branch)
 
