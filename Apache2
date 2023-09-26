@@ -7,3 +7,4 @@ $ sudo systemctl restart apache2
 $ sudo systemctl reload apache2
 $ sudo systemctl status apache2
 $ apache2 -v
+$ tail -f /var/log/apache2/access.log
