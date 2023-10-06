@@ -8,3 +8,6 @@ $ sudo systemctl reload apache2
 $ sudo systemctl status apache2
 $ apache2 -v
 $ tail -f /var/log/apache2/access.log
+
+
+sudo chown -R www-data:www-data /var/www/html/mydir -> direktori owner to public
