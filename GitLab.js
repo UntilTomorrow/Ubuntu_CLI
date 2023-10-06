@@ -39,7 +39,7 @@ $ git push origin -u (branch)
 
 #Error 
 
-error: The following untracked working tree files would be overwritten by checkout:
+Ketika pindah branch mendapatkan error: The following untracked working tree files would be overwritten by checkout:
 Commit Perubahan :
 $ git status
 $ git add .
