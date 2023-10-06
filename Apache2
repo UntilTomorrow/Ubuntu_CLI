@@ -11,3 +11,19 @@ $ tail -f /var/log/apache2/access.log
 
 
 sudo chown -R www-data:www-data /var/www/html/mydir -> direktori owner to public
+
+#CONF sites-avaliable 
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName perfex_crm
+        ServerAlias www.perfex_crm
+        DocumentRoot /var/www/html/perfex_crm
+        <Directory /var/www/html/perfex_crm>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+        </Directory>
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
