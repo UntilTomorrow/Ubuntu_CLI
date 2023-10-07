@@ -18,8 +18,8 @@ sudo chown -R www-data:www-data /var/www/html/mydir -> direktori owner to public
         ServerAdmin webmaster@localhost
         ServerName perfex_crm
         ServerAlias www.perfex_crm
-        DocumentRoot /var/www/html/perfex_crm
-        <Directory /var/www/html/perfex_crm>
+        DocumentRoot /var/www/html/mydir
+        <Directory /var/www/html/mydir>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride All
                 Require all granted
