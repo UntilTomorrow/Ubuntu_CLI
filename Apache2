@@ -28,3 +28,23 @@ sudo chown -R www-data:www-data /var/www/html/mydir -> direktori owner to public
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
+# .htaccess izinkan hanya ektensi tertentu yang bisa di akses public 
+
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /appku/
+
+    # Izinkan  ekstensi .jpg, .png, .gif
+    RewriteCond %{REQUEST_URI} ^/appku/media [NC]
+    RewriteCond %{REQUEST_URI} !\.(jpg|png|gif)$ [NC]
+	RewriteRule .* - [F,L]
+
+    # Redirect selain gambar ke index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+</IfModule>
+
+
