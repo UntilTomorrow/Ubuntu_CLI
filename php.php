@@ -10,3 +10,9 @@ $ Sudo systemctl restart php
 
 # Windows change PHP 
 set PATH=C:\Program Files\Ampps\php74;%PATH%
+
+sudo apt-get install php7.1-curl
+sudo nano /etc/php/7.1/apache2/php.ini
+extension=curl.so
+extension=curl.so
+
